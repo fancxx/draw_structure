@@ -1,0 +1,81 @@
+├─ .mysql_history
+├─ .xsession-errors.old
+├─ .gdb_history
+├─ .lesshst
+├─ .bash_logout
+├─ .ICEauthority
+├─ .face.icon
+├─ .face
+├─ .viminfo
+├─ .gdbinit
+├─ .dmrc
+├─ .aggressor.prop
+├─ .rediscli_history
+├─ .face.dpkg-new
+├─ .zsh_history
+├─ .xsession-errors
+├─ .bashrc
+├─ shell.elf
+├─ .python_history
+├─ .bashrc.original
+├─ .zshrc.dpkg-new
+├─ .Xauthority
+├─ .hushlogin
+├─ .zshrc
+├─ index.html
+├─ .profile
+├─ .ophcrackrc
+├─ .wget-hsts
+├─ .rnd
+├─ /.set:
+├─ /pwndbg:
+|    |  ...
+├─ /.BurpSuite:
+├─ /.gnupg:
+├─ /图片:
+|    |  ...
+├─ /.cme:
+├─ /peda:
+|    |  ...
+├─ /.ssh:
+├─ /Pwngdb:
+|    |  ...
+├─ /.net.rebeyond.behinder.ui.Main:
+├─ /.jwt_tool:
+├─ /视频:
+|    ├─ <Empty>
+├─ /.vscode:
+├─ /.dbus:
+├─ /.swt:
+├─ /.cache:
+├─ /下载:
+|    |  ...
+├─ /.npm:
+├─ /WWW:
+|    |  ...
+├─ /.mozilla:
+├─ /.java:
+├─ /tools:
+|    |  ...
+├─ /.john:
+├─ /.wpscan:
+├─ /.pki:
+├─ /.msf4:
+├─ /.local:
+├─ /.dirsearch:
+├─ /.openjfx:
+├─ /.dotnet:
+├─ /公共:
+|    ├─ <Empty>
+├─ /桌面:
+|    |  ...
+├─ /.config:
+├─ /文档:
+|    ├─ <Empty>
+├─ /模板:
+|    ├─ <Empty>
+├─ /.themes:
+├─ /音乐:
+|    ├─ <Empty>
+├─ /go:
+|    |  ...
