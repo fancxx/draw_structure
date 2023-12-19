@@ -1,0 +1,5 @@
+structure/
+ ├── output.txt
+ ├── README.md
+ ├── structure.py
+ └── .git/

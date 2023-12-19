@@ -26,26 +26,27 @@ async def draw(f:str, current:int, depth:int, path:str,prefix:str ,skipDotfiles:
        if os.path.isfile(full_path):
            index += 1
            if index == len(entries):
-               f.write("{}└─ {}\n".format(prefix,entry))
+               f.write("{}└── {}\n".format(prefix,entry))
            else:
-               f.write("{}├─ {}\n".format(prefix,entry))
+               f.write("{}├── {}\n".format(prefix,entry))
    for entry in entries:
        full_path = os.path.join(path, entry)
        if os.path.isdir(full_path):
            index += 1
            if index == len(entries):
-              f.write("{}└─ {}/\n".format(prefix,entry))
+              f.write("{}└── {}/\n".format(prefix,entry))
            else:
-              f.write("{}├─ {}/\n".format(prefix,entry))
+              f.write("{}├── {}/\n".format(prefix,entry))
            if not (entry.startswith(".")):
                if index == len(entries):
-                   await draw(f,current+1,depth,full_path,prefix+"   ",skipDotfiles)
+                   await draw(f,current+1,depth,full_path,prefix+"    ",skipDotfiles)
                else:
-                   await draw(f,current+1,depth,full_path,prefix+"|  ",skipDotfiles)
+                   await draw(f,current+1,depth,full_path,prefix+"|   ",skipDotfiles)
 async def main():
    depth, path, output, skip = parseArgs()
    f = open(output, 'w+', encoding='utf-8')
-   await draw(f,0,depth,path,"",skip)
+   f.write("{}/\n".format(os.path.basename(path)))
+   await draw(f,0,depth,path," ",skip)
    print("任务完成")
    
 
