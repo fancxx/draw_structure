@@ -17,8 +17,10 @@ async def draw(f:str, current:int, depth:int, path:str,prefix:str ,skipDotfiles:
    entries = os.listdir(path)
    if len(entries) == 0:
         f.write('{}└──  <Empty>\n'.format(prefix))
+        print('{}└──  <Empty>\n'.format(prefix))
    elif current == depth:
         f.write('{}└── ...\n'.format(prefix))
+        print('{}└── ...\n'.format(prefix))
         return
    index = 0
    for entry in entries:
@@ -27,16 +29,20 @@ async def draw(f:str, current:int, depth:int, path:str,prefix:str ,skipDotfiles:
            index += 1
            if index == len(entries):
                f.write("{}└── {}\n".format(prefix,entry))
+               print("{}└── {}\n".format(prefix,entry))
            else:
                f.write("{}├── {}\n".format(prefix,entry))
+               print("{}├── {}\n".format(prefix,entry))
    for entry in entries:
        full_path = os.path.join(path, entry)
        if os.path.isdir(full_path):
            index += 1
            if index == len(entries):
               f.write("{}└── {}/\n".format(prefix,entry))
+              print("{}└── {}/\n".format(prefix,entry))
            else:
               f.write("{}├── {}/\n".format(prefix,entry))
+              print("{}├── {}/\n".format(prefix,entry))
            if not (entry.startswith(".")):
                if index == len(entries):
                    await draw(f,current+1,depth,full_path,prefix+"    ",skipDotfiles)
@@ -44,11 +50,14 @@ async def draw(f:str, current:int, depth:int, path:str,prefix:str ,skipDotfiles:
                    await draw(f,current+1,depth,full_path,prefix+"|   ",skipDotfiles)
 async def main():
    depth, path, output, skip = parseArgs()
+   if not path[0] == "/" and not path[1] == ":":
+       path = os.path.join(os.getcwd(), path) 
    f = open(output, 'w+', encoding='utf-8')
    f.write("{}/\n".format(os.path.basename(path)))
+   print("{}/\n".format(os.path.basename(path)))
    await draw(f,0,depth,path," ",skip)
+   f.close()
    print("任务完成")
-   
 
 if __name__ == '__main__':
    asyncio.run(main())
